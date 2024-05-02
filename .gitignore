@@ -1,8 +1,4 @@
-.terraform
-.terraform/
-.terraform/*
-./.terraform/
-*.hcl
+**/.terraform/*
 **/*.hcl
-*.tfstate
-*.backup
+**/*.tfstate
+**/*.backup
