@@ -1,5 +1,5 @@
-**/.terraform/*
+# .terraform/ 디렉토리의 경우 크기가 400MB가 넘어가 업로드 시 100MB 제한이 있는 github에 업로드를 하기 위해서는 lfs를 사용해하지만 lfs의 경우 요금이 발생할 수 있는 부분이 있으며, 일반적으로 .terraform 파일은 github에 올리지 않으므로, .gitignore 파일을 생성하고 파일안에 commit 시 제외할 파일 및 디렉토리를 설정해줄 수 있으나, 현재 오류로 인해 모든 경로의 .terraform 디렉토리를 제외하는 **/.terraform/* 을 입력해주어도 제외가 되지않는 상황이 발생 이에 대한 해결 방안으로 git filter-branch -f --index-filter 'git rm --cached -r --ignore-unmatch [경로]/.terraform/'  < 명령어로 .terraform 디렉토리를 제외해 주어야 하며, .terraform 디렉토리가 존재하는 각 절대경로를 입력해 주어야함
 **/*.hcl
 **/*.tfstate
 **/*.backup
-backend-test/.terraform/*
+**/.terraform/*
